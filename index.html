@@ -10,7 +10,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Twittler0</title>
+    <title>Twittler</title>
     <link rel="stylesheet" href="main.css">
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
@@ -58,7 +58,6 @@
             for (var i = index; i < streams.home.length; i++) {
                 var tweet = streams.home[index];
                 var $tweet = $('<div class="tweets"></div>');
-                console.log("tweetLoad, prepending: " + tweet.user);
                 $tweet.append('<a class="' + tweet.user + '"><b>@' + tweet.user + '</b></a>' + "<br><a class=timestamp>" + String(new Date()).slice(16, 24) + "</a><br>" + tweet.message);
                 $tweet.prependTo('.bigcontainer');
                 index += 1;
@@ -79,6 +78,7 @@
         var userLoad = function(searchTerm) {
             // If userLoad is running for first time, clear all unwanted tweets from the screen and then flip firstTime toggle off.
             if (firstTime === true) {
+                userdex = 0;
                 firstTime = false;
                 $('.bigcontainer').html(" ");
             }
@@ -90,7 +90,6 @@
 
                 // if searchterm matches, 
                 if (tweet.user === searchTerm) {
-                    console.log("userLoad, prepending good: " + tweet.user);
                     $tweet.append('<a class="' + tweet.user + '"><b>@' + tweet.user + '</b></a>' + "<br><a class=timestamp>" + String(new Date()).slice(16, 24) + "</a><br>" + tweet.message);
                     $tweet.prependTo('.bigcontainer');
 
@@ -112,7 +111,7 @@
             tweetLoad();
         });
 
-        // on Auto-Load click, execute tweetLoad every 4 seconds
+        // on Auto-Load click, call tweetLoad every 4 seconds
         $('#autoload').click(function() {
             tweetLoad();
             setInterval(tweetLoad, 1000);
