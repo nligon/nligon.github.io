@@ -58,7 +58,7 @@
             for (var i = index; i < streams.home.length; i++) {
                 var tweet = streams.home[index];
                 var $tweet = $('<div class="tweets"></div>');
-                $tweet.append('<a class="' + tweet.user + '"><b>@' + tweet.user + '</b></a>' + "<br><a class=timestamp>" + String(new Date()).slice(16, 24) + "</a><br>" + tweet.message);
+                $tweet.append('<a class="' + tweet.user + '"><u><b>@' + tweet.user + '</b></u></a>' + "<br><a class=timestamp>" + String(new Date()).slice(16, 24) + "</a><br>" + tweet.message);
                 $tweet.prependTo('.bigcontainer');
                 index += 1;
             }
@@ -90,7 +90,7 @@
 
                 // if searchterm matches, 
                 if (tweet.user === searchTerm) {
-                    $tweet.append('<a class="' + tweet.user + '"><b>@' + tweet.user + '</b></a>' + "<br><a class=timestamp>" + String(new Date()).slice(16, 24) + "</a><br>" + tweet.message);
+                $tweet.append('<a class="' + tweet.user + '"><u><b>@' + tweet.user + '</b></u></a>' + "<br><a class=timestamp>" + String(new Date()).slice(16, 24) + "</a><br>" + tweet.message);
                     $tweet.prependTo('.bigcontainer');
 
                 } else {
