@@ -154,6 +154,7 @@ var collision = function() {
     if (distance(enemycx - playercx, enemycy - playercy) <= 20) {
       if (hasBeenHit === false) {
         collisionCount++;
+        enemy_data = [];
         currentScore = 0;
         hasBeenHit = true;
       }
