@@ -57,7 +57,7 @@ var update = function(data) {
     .attr('class', 'enemy')
     .attr('r', fatness)
     .attr('fill', 'red')
-    .attr('opacity', 0.3)
+    .attr('opacity', 0.7)
     .attr('cx', d => d.x)
     .attr('cy', d => d.y);
 
