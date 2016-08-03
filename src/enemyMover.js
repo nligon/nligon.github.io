@@ -42,7 +42,7 @@ EnemyMover.prototype.step = function(timeBetweenSteps) {
     'left': ((edge[1]) && (edge[1] - newWidth)) + 'px',
     'height': newHeight + 'px',
     'width': newWidth + 'px',
-  }, 10000, function() {
+  }, 5000, function() {
     // $('.game-over').removeClass('hidden');
     // clearInterval(gamePlay);
   });

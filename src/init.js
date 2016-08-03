@@ -38,7 +38,7 @@ $(document).ready(function() {
         laser.play();
         astBoom.currentTime = 0;
         astBoom.play();
-        points++;
+        points = points + 2;
         $(mover.$node).find('img').attr('src', expl0);
         $('.points-shower').text('Points: ' + points);
         setTimeout(function() {
@@ -46,7 +46,7 @@ $(document).ready(function() {
         }, 250);
       });
       $('body').append(mover.$node);
-    }, 3000);
+    }, 1000);
 
     enemyPlay = setInterval(function() {
       var enemy = new enemyMakerFunction(
@@ -60,7 +60,7 @@ $(document).ready(function() {
         laser.play();
         enemyBoom.currentTime = 0;
         enemyBoom.play();
-        points++;
+        points = points + 5;
         $(enemy.$node).find('img').attr('src', expl0);
         $('.points-shower').text('Points: ' + points);
         setTimeout(function() {
@@ -68,7 +68,7 @@ $(document).ready(function() {
         }, 250);
       });
       $('body').append(enemy.$node);
-    }, 3000);
+    }, 4000);
 
   });
 
@@ -77,5 +77,10 @@ $(document).ready(function() {
       location.reload();
     })
   })
+
+  gamePlay = setInterval(function() {
+    points++;
+    $('.points-shower').text('Points: ' + points);
+  }, 1000);
 
 });
