@@ -20,12 +20,6 @@ $(document).ready(function() {
     $(document.body).click(function() {
       laser.currentTime = 0;
       laser.play();
-
-      setInterval(function() {
-        points++;
-        $('.points-shower').text('Points: ' + points);
-      }, 1000);
-
     });
 
     $('.start-button').addClass('hidden');
@@ -33,14 +27,15 @@ $(document).ready(function() {
     var enemyMakerFunction = EnemyMover;
 
     gamePlay = setInterval(function() {
-      var mover = new moverMakerFunction();
+      var mover = new moverMakerFunction(
+      );
 
       $(mover.$node).click(function() {
         laser.currentTime = 0;
         laser.play();
         astBoom.currentTime = 0;
         astBoom.play();
-        points = points + 2;
+        points++;
         $(mover.$node).find('img').attr('src', expl0);
         $('.points-shower').text('Points: ' + points);
         setTimeout(function() {
@@ -51,14 +46,15 @@ $(document).ready(function() {
     }, 1000);
 
     enemyPlay = setInterval(function() {
-      var enemy = new enemyMakerFunction();
+      var enemy = new enemyMakerFunction(
+      );
 
       $(enemy.$node).click(function() {
         laser.currentTime = 0;
         laser.play();
         enemyBoom.currentTime = 0;
         enemyBoom.play();
-        points = points + 5;
+        points+=5;
         $(enemy.$node).find('img').attr('src', expl0);
         $('.points-shower').text('Points: ' + points);
         setTimeout(function() {
@@ -75,5 +71,11 @@ $(document).ready(function() {
       location.reload();
     })
   })
+
+  gamePlay = setInterval(function() {
+    points++;
+    $('.points-shower').text('Points: ' + points);
+  }, 1000);
+
 
 });
