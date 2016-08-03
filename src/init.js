@@ -20,6 +20,12 @@ $(document).ready(function() {
     $(document.body).click(function() {
       laser.currentTime = 0;
       laser.play();
+
+      setInterval(function() {
+        points++;
+        $('.points-shower').text('Points: ' + points);
+      }, 1000);
+
     });
 
     $('.start-button').addClass('hidden');
@@ -27,11 +33,7 @@ $(document).ready(function() {
     var enemyMakerFunction = EnemyMover;
 
     gamePlay = setInterval(function() {
-      var mover = new moverMakerFunction(
-        // $('body').height() * Math.random(),
-        // $('body').width() * Math.random(),
-        // Math.random() * 1000
-      );
+      var mover = new moverMakerFunction();
 
       $(mover.$node).click(function() {
         laser.currentTime = 0;
@@ -49,11 +51,7 @@ $(document).ready(function() {
     }, 1000);
 
     enemyPlay = setInterval(function() {
-      var enemy = new enemyMakerFunction(
-        // $('body').height() * Math.random(),
-        // $('body').width() * Math.random(),
-        // Math.random() * 1000
-      );
+      var enemy = new enemyMakerFunction();
 
       $(enemy.$node).click(function() {
         laser.currentTime = 0;
@@ -77,10 +75,5 @@ $(document).ready(function() {
       location.reload();
     })
   })
-
-  gamePlay = setInterval(function() {
-    points++;
-    $('.points-shower').text('Points: ' + points);
-  }, 1000);
 
 });
