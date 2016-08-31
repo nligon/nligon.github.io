@@ -19,7 +19,7 @@ angular.module('Eva.chat', [])
     }).then(function(response) {
       console.log('response:', response);
       $scope.details = 'Eva: ' + response.data.result.speech
-      responsiveVoice.speak(response.data.result.speech);
+      responsiveVoice.speak(response.data.result.speech, "UK English Female", {volume: 1, rate: 0.9});
     }, function(error) {
       console.log('error:', error);
     });

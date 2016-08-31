@@ -1,8 +1,15 @@
+@keyframes example {
+    from {opacity: 0;}
+    to {opacity : 1;}
+}
+
 body {
   background: url('../matrix.gif');
   text-align: center;
   background-size: cover;
   font-size: 18px;
+  animation-name: example;
+  animation-duration: 8s;
 }
 
 html {
@@ -35,19 +42,11 @@ input {
   color: Lime;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   /*font-weight: bold;*/
-  font-size: 30px;
+  font-size: 20px;
   line-height: 43px;
   padding: 0 0.75em;
   width: 400px;
-  -webkit-transition: all 0.35s ease-in;
-}
-
-textarea {
-  background-color: orange;
-  border: 1px solid red;
-  color: #606B88;
-  padding: 0.5em;
-  width: 100%;
+  opacity: 0.8;
   -webkit-transition: all 0.35s ease-in;
 }
 
@@ -64,13 +63,15 @@ textarea:focus {
 }
 
 .text {
+  /* for eva */
   font-family: 'Open Sans', sans-serif;
   color: white;
-  font-size: 30px
+  font-size: 40px
 }
 
 .btn {
-  background-color: green;
+  background-color: black;
+  color: #00ff00;
   /*display: inline-block;*/
   /*font-family: "Helvetica";*/
   font-size: 20px;
@@ -82,8 +83,10 @@ textarea:focus {
 }
 
 .btn:hover {
-  background-color: black;
-  color: lime;
+  background-color: #00ff00;
+  color: black;
 }
 
-
+.thebox {
+  color: black font-size: 10px;
+}
