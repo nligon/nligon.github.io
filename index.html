@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html>
+<doctype! html>
+  <html ng-app="Eva">
+  <meta charset="utf-8" />
 
-<head>
-  <title>Space Commander</title>
-  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script src="lib/jquery.js"></script>
-  <script src="src/mover.js"></script>
-  <script src="src/blinkyMover.js"></script>
-  <script src="src/asteroidMover.js"></script>
-  <script src="src/enemyMover.js"></script>
-</head>
+  <head>
+    <title>Eva</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
 
-<body>
-  <div class='flexbox-top'>
-    <a href="#" class="points-shower">Points: 0</a>
-  </div>
-  <div class="flexbox">
-    <div class="game-over hidden">
-      <div class='game-over-text'>Game over</div>
-      <div class='game-over-text smaller start'>Play again?</div>
+  <body>
+    <div class="container">
+      <script src="lib/angular.js"></script>
+      <script src="lib/angular-route.js"></script>
+      <script src="app.js"></script>
+      <script src="chat/chat.js"></script>
+      <script src="about/about.js"></script>
+      <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+      <nav>
+        <span class="uppertext">
+      <a href="#/chat">Chat</a>
+      <a href="#/about">About</a>
+    </nav>
+    </span>
+        <div id="container" class=textarea ng-controller="chatCtrl">
+          <form>
+            <input type="text" ng-model="search" placeholder="Enter message here" />
+            <button ng-click="go()" id="rec" class="btn" value="search">Send</button>
+          </form>
+          <div ng-view></div>
+        </div>
     </div>
-    <div class="start start-button">Start</div>
-  </div>
-  <div class='cockpit'></div>
-  <div class='flex'><div class='laser'></div></div>
-  <script src="src/init.js"></script>
-</body>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </body>
 
-</html>
+  </html>
